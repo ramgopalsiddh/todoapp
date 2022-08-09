@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # get "about-us", to: "about#index", as: :about
   get "todo", to: "todo#index"
 
+  get "sign_up", to:"registrations#new"
+  post "sign_up", to:"registrations#create"
+
   # root route 
   # these are all three type can we define root route
     # Defines the root path route ("/")
