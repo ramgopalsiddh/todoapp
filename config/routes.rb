@@ -6,9 +6,18 @@ Rails.application.routes.draw do
   # get "about-us", to: "about#index", as: :about
   get "todo", to: "todo#index"
 
-  # change password
+  # change password(update)
   get "password", to:"passwords#edit", as: :edit_password
   patch"password", to:"passwords#update"
+
+  # forget password
+  get "password/reset", to:"password_resets#new"
+  post"password/reset", to:"password_resets#create"
+   # this use for mailer 
+  get "password/reset/edit", to:"password_resets#edit"
+  patch"password/reset/edit", to:"password_resets#update"
+
+
 
   # sign up routes
   get "sign_up", to:"registrations#new"
