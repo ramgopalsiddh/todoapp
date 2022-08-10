@@ -18,7 +18,8 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if Current.user %>
         <li class="nav-item">
-          <span>logged in as:-<%= Current.user.email %></span>
+         <%# <span>logged in as:-<%= Current.user.email %> <%# </span> %>
+         <%= link_to Current.user.email, edit_password_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
             <%# call the delete mathod and destroy the session and log out %>
