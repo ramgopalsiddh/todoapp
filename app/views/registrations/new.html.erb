@@ -1,8 +1,16 @@
 <h1>sign up</h1>
+<% @user %>
 <br/>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-
+<div data-turbo="false">
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+      <% if @user.errors.any? %>
+       <div class="alert alert-danger">
+        <% @user.errors.full_messages.each do |message|%>
+           <div><%= message %></div>
+        <% end %>
+       </div>
+     <% end %>
         <div class="mb-3">
            <%= form.label :Email %>
            <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
@@ -19,7 +27,7 @@
         </div>
 
         <div class="mb-3">
-           <%= form.submit "SIGN UP", class:"btn btn-primary" %>
+           <%= form.submit class:"btn btn-primary" %>
         </div>
-
-<% end %>
+    <% end %>
+</div>
