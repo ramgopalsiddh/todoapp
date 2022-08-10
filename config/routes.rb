@@ -6,8 +6,16 @@ Rails.application.routes.draw do
   # get "about-us", to: "about#index", as: :about
   get "todo", to: "todo#index"
 
+  # sign up routes
   get "sign_up", to:"registrations#new"
   post "sign_up", to:"registrations#create"
+
+  # sign in routes
+  get "sign_in", to:"sessions#new"
+  post "sign_in", to:"sessions#create"
+
+  # logout routes
+  delete "logout", to:"sessions#destroy"
 
   # root route 
   # these are all three type can we define root route

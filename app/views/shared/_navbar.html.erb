@@ -14,6 +14,26 @@
         </li>
         </li>
       </ul>
+      <%# in side the nav bar but diffrent side %>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+        <li class="nav-item">
+          <span>logged in as:-<%= Current.user.email %></span>
+        </li>
+        <li class="nav-item">
+            <%# call the delete mathod and destroy the session and log out %>
+           <%= button_to "Logout", logout_path, method: :delete, class:" nav-link btn btn-danger" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+           <%= link_to "sign up", sign_up_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+           <%= link_to "log in", sign_in_path, class:"nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+
     </div>
   </div>
 </nav>
