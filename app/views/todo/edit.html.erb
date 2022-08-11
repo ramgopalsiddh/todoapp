@@ -1,0 +1,26 @@
+<h1>Edit Todo</h1>
+
+<div data-turbo="false">
+    <%= form_with url: edit_todo_path do |form|%>
+      
+        <div class="mb-3">
+           <%= form.label :todo %>
+           <%= form.text_field :todo, class:"form-control", placeholder:"todo" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :due_date%>
+          <div class="form-control">
+             <%= form.datetime_select  :due_date%>
+          </div>
+        </div>
+
+        <div class="mb-3">
+           <%= form.submit "update todo", class:"btn btn-primary" %>
+           <%# change submit to delet %>
+          <%= form.submit "delete todo", class:"btn btn-danger" %>
+        </div>
+     <% end %>
+</div>
+
+

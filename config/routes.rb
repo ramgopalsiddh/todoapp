@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "about", to: "about#index"
      # change  route url but don't change file name
   # get "about-us", to: "about#index", as: :about
+
+  # TODO's routes
   get "todo", to: "todo#index"
+  get "new_todo", to: "todo#new"
+  get "edit_todo", to: "todo#edit"
 
   # change password(update)
   get "password", to:"passwords#edit", as: :edit_password

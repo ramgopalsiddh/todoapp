@@ -1,9 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
+   <% if Current.user %>
      <%= link_to"Todo", todo_path, class:"navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to"Home", root_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About", about_path, class:"nav-link active" %>
+        </li>
+      </ul>
+
+    <% else %>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -12,6 +24,7 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class:"nav-link active" %>
         </li>
+        <% end %>
         </li>
       </ul>
       <%# in side the nav bar but diffrent side %>
